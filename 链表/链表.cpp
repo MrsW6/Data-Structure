@@ -19,10 +19,9 @@ int get_list(pNode pHead,int index);
 
 int main()
 {
-	//ï¿½ï¿½ï¿½ï¿½Í·Ö¸ï¿½ï¿½
 	pNode pHead = NULL;
 	pHead = creat_list();	
-	printf("ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Îªï¿½ï¿½%d\n",length_list(pHead));
+	printf("Á´±íµÄ³¤¶ÈÊÇ%d\n",length_list(pHead));
 	travel_list(pHead);
 	printf("%d\n",get_list(pHead,1));
 }
@@ -36,21 +35,21 @@ pNode creat_list()
 	pTail->pNext = NULL;
 	if(pHead == NULL)
 	{
-		printf("ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹");
+		printf("ÄÚ´æ·ÖÅäÊ§°Ü");
 		exit(-1);
 	}
 	else
 	{
-		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Úµï¿½Ä¸ï¿½ï¿½ï¿½len= ");
+		printf("len= ");
 		scanf("%d",&len);
 		for(int i = 0; i < len; i++)
 		{
-			printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%dï¿½ï¿½ï¿½Úµï¿½ï¿½Öµ:",i+1);
+			printf("%d",i+1);
 			scanf("%d",&value);
 			pNode pNew = (pNode)malloc(sizeof(pNode));
 			if(pNew == NULL)
 			{
-				printf("ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹");
+				printf("ÄÚ´æ·ÖÅäÊ§°Ü");
 				exit(-1);
 			}
 			pNew->data = value;
@@ -62,7 +61,6 @@ pNode creat_list()
 	}
 }
 
-//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 void travel_list(pNode pHead)
 {
 	pNode p = pHead->pNext;
@@ -102,14 +100,13 @@ bool insert_list(pNode pHead,int index,int value)
 	p = pHead;
 	if(index > length+1 || index < 1)
 	{
-		printf("ï¿½Þ·ï¿½ï¿½Ú´ï¿½Î»ï¿½Ã²ï¿½ï¿½ï¿½Ôªï¿½ï¿½\n");
+		printf("ÕÒ²»µ½\n");
 	}
 	else
 	{
 		pNode pNew = (pNode)malloc(sizeof(pNode));
 		if(NULL == pNew)
 		{
-			printf("ï¿½ï¿½Ì¬ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½\n");
 			exit(-1);
 		}	
 		else
@@ -134,7 +131,7 @@ bool delete_list(pNode pHead,int index)
 	int length = length_list(pHead);
 	if(index < 1 || index > length)
 	{
-		printf("ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Þ·ï¿½É¾ï¿½ï¿½\n");
+		printf("ÕÒ²»µ½\n");
 	}
 	else if(index == 1)
 	{
